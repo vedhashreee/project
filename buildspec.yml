@@ -13,4 +13,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn clean validate 
-
+artifacts:
+  files:
+project.yml.txt
+Displaying project.yml.txt.
