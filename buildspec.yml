@@ -1,17 +1,16 @@
-version: 0.2
-
+version: 0.2 
 phases:
   install:
     runtime-versions:
-      java: corretto11
-    commands:
-      # Upgrade AWS CLI to the latest version
-      - pip install --upgrade awscli
+      java: corretto8
   pre_build:
     commands:
-      - mvn clean compile test
+      - echo Prebuild Stage `date`
   build:
     commands:
-      - mvn package
+      - echo Build started on `date`
   post_build:
-   
+    commands:
+      - echo Build completed on `date`
+      - mvn clean validate 
+
